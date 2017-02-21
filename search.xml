@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[我要做的(持续性更新)]]></title>
+      <url>%2F2017%2F02%2F21%2F20170223%2F</url>
+      <content type="text"><![CDATA[读书写字 任务 完成度 紧急性 备注 多读书 0 5 学到老 网页上的赏 0 1 阅读次数 0 1 网页置顶 0 1 javascript 1% 10 3月之前 网络地图 2% 2]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[CMD 一键获取所有连接过的 wifi 密码]]></title>
       <url>%2F2017%2F02%2F21%2F20170213%2F</url>
       <content type="text"><![CDATA[CMD 一键获取所有连接过的 wifi 密码 原文来自：http://blog.ixxin.cn/ 使用方法 工具：CMD 代码： for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear]]></content>
