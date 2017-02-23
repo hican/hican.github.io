@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[解决ssh connect to host github.com port 22 connection timed out]]></title>
+      <url>%2F2017%2F02%2F23%2F20170223%2F</url>
+      <content type="text"><![CDATA[当出现上述这个问题时，即connect to host github.com port 22: Connection timed out。 解决方法：在.ssh目录下创建一个config文件，输入如下内容： Host github.comUser xxx@qq.com （你注册github时的邮箱，这里使用注册的用户名也行）Hostname ssh.github.comPreferredAuthentications publickeyIdentityFile ~/.ssh/id_rsaPort 443 值得注意是文件名为config，没有后缀名。 然后测试是否连得上 : 即：ssh -T git@github.com 会出现以下情况： 出现Hi xxx!……表示连接成功。]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[CMD 一键获取所有连接过的 wifi 密码]]></title>
       <url>%2F2017%2F02%2F21%2F20170213%2F</url>
       <content type="text"><![CDATA[CMD 一键获取所有连接过的 wifi 密码 原文来自：http://blog.ixxin.cn/ 使用方法 工具：CMD 代码： for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear]]></content>
