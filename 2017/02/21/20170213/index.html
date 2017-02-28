@@ -98,7 +98,7 @@
 		}
 		.">
 <meta property="og:image" content="http://okowaawz9.bkt.clouddn.com/abcd.png">
-<meta property="og:updated_time" content="2017-02-27T12:17:40.003Z">
+<meta property="og:updated_time" content="2017-02-28T01:08:16.198Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CMD 一键获取所有连接过的 wifi 密码">
 <meta name="twitter:description" content="CMD 一键获取所有连接过的 wifi 密码
@@ -442,11 +442,14 @@
 			color: white;
 			border-radius: 5px;
 			cursor: pointer;
-			width:8%;
+			width:12%;
 			text-align:center;
 			line-height: 30px;
 			margin-bottom: 10px;
 			display: none;
+			position: absolute;
+			bottom: 2px;
+			right: 3px;
 		
 		}
 		.demo:hover .btn{
@@ -457,11 +460,12 @@
 		}
 		.demo textarea{
 			border: none;
-			width:90%;
+			width:88%;
 			font-size: 16px;
 			background: #ccc;
 			line-height: 30px;
 			font-family: "微软雅黑";
+			position: relative;
 		}
 </style>
 </head>
@@ -470,14 +474,13 @@
 <script>
 new Clipboard('.btn');
 var clipboard = new Clipboard('.btn');
-
+document.getElementById("foo").readOnly=true;
 clipboard.on('success', function(e) {
 	var msg = e.trigger.getAttribute('aria-label');
 	alert(msg);
     console.info('Action:', e.action);
     console.info('Text:', e.text);
     console.info('Trigger:', e.trigger);
-
     e.clearSelection();
 });
 </script>
@@ -486,7 +489,8 @@ clipboard.on('success', function(e) {
 	<h2>工具：CMD 代码：</h2>
 	for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do  @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear
 	<div class="demo">
-	<textarea id="foo">for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do  @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear</textarea>
+	<textarea id="foo" rows="3" cols="50">for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do  @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear
+	</textarea>
 	<button class="btn" data-clipboard-target="#foo" aria-label="复制成功！">复制</button>
 	</div>
 <img src="http://okowaawz9.bkt.clouddn.com/abcd.png" alt="">
