@@ -575,7 +575,7 @@
 <script>
 new Clipboard('.btn');
 var clipboard = new Clipboard('.btn');
-document.getElementById("foo").readOnly=true;
+// document.getElementById("foo").readOnly=true;
 clipboard.on('success', function(e) {
 	var msg = e.trigger.getAttribute('aria-label');
 	alert(msg);
