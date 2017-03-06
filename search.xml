@@ -1,329 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   
-  
     
     <entry>
       <title><![CDATA[hexo搭建博客过程中出现的问题，4000端口被占用]]></title>
-      <url>http://yoursite.com/2017/03/06/20170306/</url>
-      <content type="html"><![CDATA[<h3 id="错误如下："><a href="#错误如下：" class="headerlink" title="错误如下："></a>错误如下：</h3><p><img src="http://okowaawz9.bkt.clouddn.com/20170306.png" alt=""></p>
-<h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><p>可在站点主题<code>_config.yml</code>内加上如下代码更改hexo-server运行时的端口号：</p>
-<p><code>##改变端口：</code></p>
-<p><code>server:</code></p>
-<p>​    <code>port: 4099</code></p>
-<p>​    <code>compress: true</code></p>
-<p>​     <code>header: true</code></p>
-<p>其中<code>4099</code>可以换成想要运行的端口号。(以上格式不对，复制粘贴是小心一点。)</p>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> hexo </tag>
-            
-        </tags>
-        
+      <url>%2F2017%2F03%2F06%2F20170306%2F</url>
+      <content type="text"><![CDATA[错误如下： 解决方法：可在站点主题_config.yml内加上如下代码更改hexo-server运行时的端口号： ##改变端口： server: ​ port: 4099 ​ compress: true ​ header: true 其中4099可以换成想要运行的端口号。(以上格式不对，复制粘贴是小心一点。)]]></content>
     </entry>
+
     
     <entry>
       <title><![CDATA[解决ssh connect to host github.com port 22 connection timed out]]></title>
-      <url>http://yoursite.com/2017/02/23/20170223/</url>
-      <content type="html"><![CDATA[<p><img src="http://okowaawz9.bkt.clouddn.com/ssh2.png" alt=""></p>
-<blockquote>
-<p>当出现上述这个问题时，即connect to host github.com port 22: Connection timed out。</p>
-<h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><p><strong>在.ssh目录下创建一个config文件，输入如下内容：</strong></p>
-<p>Host github.com<br>User xxx@qq.com <strong>（你注册github时的邮箱，这里使用注册的用户名也行）</strong><br>Hostname ssh.github.com<br>PreferredAuthentications publickey<br>IdentityFile ~/.ssh/id_rsa<br>Port 443 </p>
-</blockquote>
-<a id="more"></a>
-<blockquote>
-<p>值得注意是文件名为config，没有后缀名。</p>
-</blockquote>
-<h3 id="然后测试是否连得上"><a href="#然后测试是否连得上" class="headerlink" title="然后测试是否连得上 :"></a>然后测试是否连得上 :</h3><blockquote>
-<p>即：ssh -T git@github.com </p>
-</blockquote>
-<h3 id="会出现以下情况："><a href="#会出现以下情况：" class="headerlink" title="会出现以下情况："></a>会出现以下情况：</h3><blockquote>
-<p><img src="http://okowaawz9.bkt.clouddn.com/ssh1.png" alt=""></p>
-</blockquote>
-<h3 id="出现Hi-xxx-……表示连接成功。"><a href="#出现Hi-xxx-……表示连接成功。" class="headerlink" title="出现Hi xxx!……表示连接成功。"></a>出现Hi xxx!……表示连接成功。</h3>]]></content>
-      
-        
-        <tags>
-            
-            <tag> github </tag>
-            
-        </tags>
-        
+      <url>%2F2017%2F02%2F23%2F20170223%2F</url>
+      <content type="text"><![CDATA[当出现上述这个问题时，即connect to host github.com port 22: Connection timed out。 解决方法：在.ssh目录下创建一个config文件，输入如下内容： Host github.comUser xxx@qq.com （你注册github时的邮箱，这里使用注册的用户名也行）Hostname ssh.github.comPreferredAuthentications publickeyIdentityFile ~/.ssh/id_rsaPort 443 值得注意是文件名为config，没有后缀名。 然后测试是否连得上 : 即：ssh -T git@github.com 会出现以下情况： 出现Hi xxx!……表示连接成功。]]></content>
     </entry>
+
     
     <entry>
       <title><![CDATA[CMD 一键获取所有连接过的 wifi 密码]]></title>
-      <url>http://yoursite.com/2017/02/21/20170213/</url>
-      <content type="html"><![CDATA[<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>CMD 一键获取所有连接过的 wifi 密码</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-        <link rel="stylesheet" href="/lib/mycss/loadstyle.css" type="text/css">
-        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-        <script>
-       window.onload=function (){
-      $(".loader").hide(1000);
-    }
-  </script>
-<script src="/lib/myjs/clipboard.min.js"></script>
-<!-- <script src="dist/clipboard.min.js"></script> -->
-<style>
-.all1{
-	width: 98%;
-	margin: 0 auto;
-}
-		.demo{
-			font-size: 14px;
-			position: relative;
-			background: #ccc;
-			font-family: "微软雅黑";
-			box-sizing: border-box;
-		}
-		.btn {
-			background: rgb(0, 100, 0); 
-			color: white;
-			border-radius: 5px;
-			cursor: pointer;
-			width:12%;
-			text-align:center;
-			line-height: 30px;
-			margin-bottom: 10px;
-			display: none;
-			position: absolute;
-			bottom: 2px;
-			right: 3px;
-		
-		}
-		.demo:hover .btn{
-			display: block;
-			float: right;
-			margin-top: 3%;
-			background: green;
-		}
-		.demo textarea{
-			border: none;
-			width:88%;
-			font-size: 16px;
-			background: #ccc;
-			line-height: 30px;
-			font-family: "微软雅黑";
-			position: relative;
-		}
-</style>
-</head>
-
-<body>
-<script>
-new Clipboard('.btn');
-var clipboard = new Clipboard('.btn');
-// document.getElementById("foo").readOnly=true;
-clipboard.on('success', function(e) {
-	var msg = e.trigger.getAttribute('aria-label');
-	alert(msg);
-    console.info('Action:', e.action);
-    console.info('Text:', e.text);
-    console.info('Trigger:', e.trigger);
-    e.clearSelection();
-});
-</script>
-<div class="all1">
-	<h1><p>使用方法</p></h1>
-	<h2>工具：CMD 代码：</h2>
-	for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do  @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear
-	<div class="demo">
-	<textarea id="foo" rows="3" cols="50">for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do  @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear
-	</textarea>
-	<button class="btn" data-clipboard-target="#foo" aria-label="复制成功！">复制</button>
-	</div>
-<img src="http://okowaawz9.bkt.clouddn.com/abcd.png" alt="">
-</div>
-<!-- 添加加载事件 -->
-<div class="loader"></div>
-</body>
-</html>
-<!--  -->]]></content>
-      
-        <categories>
-            
-            <category> 技术 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 技巧 </tag>
-            
-            <tag> 福利 </tag>
-            
-        </tags>
-        
+      <url>%2F2017%2F02%2F21%2F20170213%2F</url>
+      <content type="text"><![CDATA[CMD 一键获取所有连接过的 wifi 密码 window.onload=function (){ $(".loader").hide(1000); } .all1{ width: 98%; margin: 0 auto; } .demo{ font-size: 14px; position: relative; background: #ccc; font-family: "微软雅黑"; box-sizing: border-box; } .btn { background: rgb(0, 100, 0); color: white; border-radius: 5px; cursor: pointer; width:12%; text-align:center; line-height: 30px; margin-bottom: 10px; display: none; position: absolute; bottom: 2px; right: 3px; } .demo:hover .btn{ display: block; float: right; margin-top: 3%; background: green; } .demo textarea{ border: none; width:88%; font-size: 16px; background: #ccc; line-height: 30px; font-family: "微软雅黑"; position: relative; } new Clipboard('.btn'); var clipboard = new Clipboard('.btn'); // document.getElementById("foo").readOnly=true; clipboard.on('success', function(e) { var msg = e.trigger.getAttribute('aria-label'); alert(msg); console.info('Action:', e.action); console.info('Text:', e.text); console.info('Trigger:', e.trigger); e.clearSelection(); }); 使用方法 工具：CMD 代码： for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear for /f "skip=9 tokens=1,2 delims=:" %i in ('netsh wlan show profiles') do @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear 复制]]></content>
     </entry>
+
     
     <entry>
       <title><![CDATA[红尘陌上雪，散落随花开]]></title>
-      <url>http://yoursite.com/2017/02/20/20170220/</url>
-      <content type="html"><![CDATA[<p><img src="http://okowaawz9.bkt.clouddn.com/xuehua.gif" alt=""></p>
-<h5 id="红尘陌上的花开。似比相见又恨晚的聚散，相遇过早前方的路人，便会成为身后的过客。相识过晚倾城清风的颜美。便会与你擦肩，来不及仰望。说不出再见，从此山隔一河。却天涯此岸，回眸仰望已是曾经沧海，百花残月之冬。相遇有缘，离花漂过。景色的相遇正如那份。一直落在思念里的寒冬，无论冰川怎样刺骨。雪花怎样漂过，一颗执着的心。一直苦苦寻找。天暗未明微落的天空却被大雪覆盖，热血的少年。曾经的意志，却从未止步。从春天到寒冬。从寒冬到天荒，一直守护着这份。从未揭开的思念。"><a href="#红尘陌上的花开。似比相见又恨晚的聚散，相遇过早前方的路人，便会成为身后的过客。相识过晚倾城清风的颜美。便会与你擦肩，来不及仰望。说不出再见，从此山隔一河。却天涯此岸，回眸仰望已是曾经沧海，百花残月之冬。相遇有缘，离花漂过。景色的相遇正如那份。一直落在思念里的寒冬，无论冰川怎样刺骨。雪花怎样漂过，一颗执着的心。一直苦苦寻找。天暗未明微落的天空却被大雪覆盖，热血的少年。曾经的意志，却从未止步。从春天到寒冬。从寒冬到天荒，一直守护着这份。从未揭开的思念。" class="headerlink" title="红尘陌上的花开。似比相见又恨晚的聚散，相遇过早前方的路人，便会成为身后的过客。相识过晚倾城清风的颜美。便会与你擦肩，来不及仰望。说不出再见，从此山隔一河。却天涯此岸，回眸仰望已是曾经沧海，百花残月之冬。相遇有缘，离花漂过。景色的相遇正如那份。一直落在思念里的寒冬，无论冰川怎样刺骨。雪花怎样漂过，一颗执着的心。一直苦苦寻找。天暗未明微落的天空却被大雪覆盖，热血的少年。曾经的意志，却从未止步。从春天到寒冬。从寒冬到天荒，一直守护着这份。从未揭开的思念。"></a>红尘陌上的花开。似比相见又恨晚的聚散，相遇过早前方的路人，便会成为身后的过客。相识过晚倾城清风的颜美。便会与你擦肩，来不及仰望。说不出再见，从此山隔一河。却天涯此岸，回眸仰望已是曾经沧海，百花残月之冬。相遇有缘，离花漂过。景色的相遇正如那份。一直落在思念里的寒冬，无论冰川怎样刺骨。<a id="more"></a>雪花怎样漂过，一颗执着的心。一直苦苦寻找。天暗未明微落的天空却被大雪覆盖，热血的少年。曾经的意志，却从未止步。从春天到寒冬。从寒冬到天荒，一直守护着这份。从未揭开的思念。</h5><h6 id="红尘相遇，年华已老。岁月花开多少不在，古往今来相遇是一件既微妙。而又神圣的事情，红尘的情网中。有前者因聚散而离开，后者才因前者的离开。而深深的相遇，曾经有人说过。有缘份相遇的人。无论彼此绕开多大个圈，也会在某个不经意间。彼此依然可以重逢相遇，其实这种故事。只是说说而已。故此，却有很多人相信。从而走进缘分的刹那。"><a href="#红尘相遇，年华已老。岁月花开多少不在，古往今来相遇是一件既微妙。而又神圣的事情，红尘的情网中。有前者因聚散而离开，后者才因前者的离开。而深深的相遇，曾经有人说过。有缘份相遇的人。无论彼此绕开多大个圈，也会在某个不经意间。彼此依然可以重逢相遇，其实这种故事。只是说说而已。故此，却有很多人相信。从而走进缘分的刹那。" class="headerlink" title="红尘相遇，年华已老。岁月花开多少不在，古往今来相遇是一件既微妙。而又神圣的事情，红尘的情网中。有前者因聚散而离开，后者才因前者的离开。而深深的相遇，曾经有人说过。有缘份相遇的人。无论彼此绕开多大个圈，也会在某个不经意间。彼此依然可以重逢相遇，其实这种故事。只是说说而已。故此，却有很多人相信。从而走进缘分的刹那。"></a>红尘相遇，年华已老。岁月花开多少不在，古往今来相遇是一件既微妙。而又神圣的事情，红尘的情网中。有前者因聚散而离开，后者才因前者的离开。而深深的相遇，曾经有人说过。有缘份相遇的人。无论彼此绕开多大个圈，也会在某个不经意间。彼此依然可以重逢相遇，其实这种故事。只是说说而已。故此，却有很多人相信。从而走进缘分的刹那。</h6><p>世间的感情，仅隔着一道距离。有些感情因距离而变得美好，有些美好因为距离。鼓励了彼此，才会让前进的路。充满了阳光照进了幸福。温暖了彼此，不过有时候。距离真是一把，验证感情的时光机。故此，有人因它而坚持。因为相信熬过了距离。剩下的便是春风，有人因它而离去，因为相信前方的未明。故此半路匆匆离去，</p>
-<p>故年走远，人故未来。走过一段是相知，走过一年是相交。在生命中，有些人一起走。在年华中，有些人分开走。在相遇的渡口，有些人。走着走着就没了，有些陌生人。走着走着就在一起了，有些人我始终不知道。会在哪里相聚，又会在哪里提前离开。生命的短暂，相遇的珍惜。所以相遇就是缘，相识便是份。生命中。时间是一场盛宴，爱情是一场坚守。时间走过的雪月，是年华似水中。那一曲独听静好，爱情是一场相遇。一场落花，同样是一场聚散。人生因情而美。岁月因爱而坚守。</p>
-<p>陌上花开，隔桌花夜。一雨芳年，相遇的竹叶。刻写着一一路走过的青苔，时光雨下。散落一地落红，那景，那月。正如初好，一丝寒风袭来。碧玉含羞的清风，凝固了月下。送走了独夜，留下了一丝静好。</p>
-<p>年华依旧。散落曾经，你说雨中的风。是你曾经追逐的梦，而冬天的雪。是你曾经散落的花，花开有别。言过其辞。多年以后，每到雪花飘落的季节。都会想起那个曾经的画面，既唯美而又纷飞。既伤感而又无言，一场大雪。一场落花，托清风捎去了思念。托无言凝固了沧海。托花开美丽了过往，时而雨。一路一花开，一路一菩提。今生的遇见，相逢的花开。走过一段路，总会看一些风景。停留一段时光，总会留下一些故事。其实很多时候。我们都知道每一个故事，总有一个美丽的结局。只是这个结局太过沧桑，也太过唯美，直至最后的散场，竞美得透露着忧伤。忧伤里散播着凄凉，凄凉里隐藏着无言。岁月中总有一场景，落在不经意的地方，人生中总有一场雪，漂在夜深人静的时候，一场散，一场缘。一场雪。只愿时光芬芳，落花静好。</p>
-<p>人生的路上，总是一路走过。人生的感情总是，一路擦肩聚散。这个世间，总有人因懂你而停留，也总有人因误解而离开。对于一路走过而停留的人，我们心存感激。因为有共鸣。所以不会离开，生命的路上。红尘的渡口。总有一些人不曾深交。也不再打扰，却也一直都在不曾离开。只是时光仿佛将相遇。定格在彼岸与此岸的一角，从此隔了一个美丽的春天。</p>
-<p>生命中一些风。一些景，总在岁月中，演奏的远去的故事，一些落叶。漂过枝头，随风飞翔，这样的季节，这样的回忆。不知道还能在岁月中展示多久，但我知道走过的路，一定会留下一些我们无法预料到的意外，预料多了也就习惯了。生命是如此。岁月便也跟着如此，走过时间的沧海。借往日那段无声的沉默，漂泊着属于自己的天涯。</p>
-<p>流年的道别中，总有一段无法言辞的往诉。站在惜忆的尽头，数数奔赶过的黄昏，言出黄昏的每一季：静惜的落雨中，总带着这样或那样的心情，慢步独入那冰雨的清风里，感受着每一个季节带来别样的静好，</p>
-<p>寒风吹过。陌上红尘，散落过往。</p>
-]]></content>
-      
-        
-        <tags>
-            
-            <tag> 文字 </tag>
-            
-        </tags>
-        
+      <url>%2F2017%2F02%2F20%2F20170220%2F</url>
+      <content type="text"><![CDATA[红尘陌上的花开。似比相见又恨晚的聚散，相遇过早前方的路人，便会成为身后的过客。相识过晚倾城清风的颜美。便会与你擦肩，来不及仰望。说不出再见，从此山隔一河。却天涯此岸，回眸仰望已是曾经沧海，百花残月之冬。相遇有缘，离花漂过。景色的相遇正如那份。一直落在思念里的寒冬，无论冰川怎样刺骨。雪花怎样漂过，一颗执着的心。一直苦苦寻找。天暗未明微落的天空却被大雪覆盖，热血的少年。曾经的意志，却从未止步。从春天到寒冬。从寒冬到天荒，一直守护着这份。从未揭开的思念。红尘相遇，年华已老。岁月花开多少不在，古往今来相遇是一件既微妙。而又神圣的事情，红尘的情网中。有前者因聚散而离开，后者才因前者的离开。而深深的相遇，曾经有人说过。有缘份相遇的人。无论彼此绕开多大个圈，也会在某个不经意间。彼此依然可以重逢相遇，其实这种故事。只是说说而已。故此，却有很多人相信。从而走进缘分的刹那。世间的感情，仅隔着一道距离。有些感情因距离而变得美好，有些美好因为距离。鼓励了彼此，才会让前进的路。充满了阳光照进了幸福。温暖了彼此，不过有时候。距离真是一把，验证感情的时光机。故此，有人因它而坚持。因为相信熬过了距离。剩下的便是春风，有人因它而离去，因为相信前方的未明。故此半路匆匆离去， 故年走远，人故未来。走过一段是相知，走过一年是相交。在生命中，有些人一起走。在年华中，有些人分开走。在相遇的渡口，有些人。走着走着就没了，有些陌生人。走着走着就在一起了，有些人我始终不知道。会在哪里相聚，又会在哪里提前离开。生命的短暂，相遇的珍惜。所以相遇就是缘，相识便是份。生命中。时间是一场盛宴，爱情是一场坚守。时间走过的雪月，是年华似水中。那一曲独听静好，爱情是一场相遇。一场落花，同样是一场聚散。人生因情而美。岁月因爱而坚守。 陌上花开，隔桌花夜。一雨芳年，相遇的竹叶。刻写着一一路走过的青苔，时光雨下。散落一地落红，那景，那月。正如初好，一丝寒风袭来。碧玉含羞的清风，凝固了月下。送走了独夜，留下了一丝静好。 年华依旧。散落曾经，你说雨中的风。是你曾经追逐的梦，而冬天的雪。是你曾经散落的花，花开有别。言过其辞。多年以后，每到雪花飘落的季节。都会想起那个曾经的画面，既唯美而又纷飞。既伤感而又无言，一场大雪。一场落花，托清风捎去了思念。托无言凝固了沧海。托花开美丽了过往，时而雨。一路一花开，一路一菩提。今生的遇见，相逢的花开。走过一段路，总会看一些风景。停留一段时光，总会留下一些故事。其实很多时候。我们都知道每一个故事，总有一个美丽的结局。只是这个结局太过沧桑，也太过唯美，直至最后的散场，竞美得透露着忧伤。忧伤里散播着凄凉，凄凉里隐藏着无言。岁月中总有一场景，落在不经意的地方，人生中总有一场雪，漂在夜深人静的时候，一场散，一场缘。一场雪。只愿时光芬芳，落花静好。 人生的路上，总是一路走过。人生的感情总是，一路擦肩聚散。这个世间，总有人因懂你而停留，也总有人因误解而离开。对于一路走过而停留的人，我们心存感激。因为有共鸣。所以不会离开，生命的路上。红尘的渡口。总有一些人不曾深交。也不再打扰，却也一直都在不曾离开。只是时光仿佛将相遇。定格在彼岸与此岸的一角，从此隔了一个美丽的春天。 生命中一些风。一些景，总在岁月中，演奏的远去的故事，一些落叶。漂过枝头，随风飞翔，这样的季节，这样的回忆。不知道还能在岁月中展示多久，但我知道走过的路，一定会留下一些我们无法预料到的意外，预料多了也就习惯了。生命是如此。岁月便也跟着如此，走过时间的沧海。借往日那段无声的沉默，漂泊着属于自己的天涯。 流年的道别中，总有一段无法言辞的往诉。站在惜忆的尽头，数数奔赶过的黄昏，言出黄昏的每一季：静惜的落雨中，总带着这样或那样的心情，慢步独入那冰雨的清风里，感受着每一个季节带来别样的静好， 寒风吹过。陌上红尘，散落过往。]]></content>
     </entry>
+
     
     <entry>
       <title><![CDATA[使你的百度分享支持 HTTPS]]></title>
-      <url>http://yoursite.com/2017/02/14/20170214/</url>
-      <content type="html"><![CDATA[<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	原文来自：<a href="http://blog.ixxin.cn/" target="_blank" rel="external">http://blog.ixxin.cn/</a>
-</head>
-<body>
-<h1>前言</h1>
-
-<h2>众所周知，目前来说，各大分享插件都不支持 https, 但是 Github 大神已经帮你解决了这个问题。
-步骤</h2>
-
-<p>下载插件
-<a href="https://github.com/hrwhisper/baiduShare" target="_blank" rel="external">https://github.com/hrwhisper/baiduShare</a></p>
-修改
-static 解压后丢到站点根目录下即可。
-然后对应的百度分享代码中，把
-.src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-改为
-.src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-大功告成
-</body>
-</html>]]></content>
-      
-        <categories>
-            
-            <category> 百度云 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 技巧 </tag>
-            
-        </tags>
-        
+      <url>%2F2017%2F02%2F14%2F20170214%2F</url>
+      <content type="text"><![CDATA[Document 原文来自：http://blog.ixxin.cn/ 前言 众所周知，目前来说，各大分享插件都不支持 https, 但是 Github 大神已经帮你解决了这个问题。 步骤 下载插件 https://github.com/hrwhisper/baiduShare 修改 static 解压后丢到站点根目录下即可。 然后对应的百度分享代码中，把 .src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)]; 改为 .src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)]; 大功告成]]></content>
     </entry>
+
     
     <entry>
       <title><![CDATA[Chrome 插件破解百度云限速以及客户端限制]]></title>
-      <url>http://yoursite.com/2017/02/12/20170212/</url>
-      <content type="html"><![CDATA[<p>原文来自<a href="http://blog.ixxin.cn/" target="_blank" rel="external">http://blog.ixxin.cn/</a></p>
-<p>前言</p>
-<p>之前分享的方法，大体原理是借助于开发者的服务器，将百度云资源下载到他服务器，然后从他服务器下载，收到各种因素的影响，导致下载速度很慢，还经常断流。<br>下面的方法直接从百度服务器下载，满速下载。</p>
-<p>##步骤</p>
-<p>首先去 Chrome 网上应用商店 <a href="https://chrome.google.com/webstore?utm_source=chrome-ntp-icon" target="_blank" rel="external">https://chrome.google.com/webstore?utm_source=chrome-ntp-icon</a> 搜索 Tampermonkey BETA 这款插件安装。<br>使用 Google Chrome 商店的方法：<a href="http://blog.ixxin.cn/archives/37/" target="_blank" rel="external">http://blog.ixxin.cn/archives/37/</a></p>
-<p>再安装这个脚本：<a href="http://jump.bdimg.com/safecheck/index?url=rN3wPs8te/oSxE9sRI6qqlw7r6N/bqM4WoLU+2qzvfBrxeDgWhD/remxu+pOgEHwO49swBdXbVuYOgpbblsiIBrXrwxllleDmajoIRmGv6PRkcfl3yjls2DiQ1FPTjUg2KzmIKX31KoIQXB3gKTQIS4yX9Tl+BzjQ3xeFfxQrM1rSc2M9M/D7Hk2viJIdEFN0MVrKAVP3EX5aCFV0PsNo8Maouu+CAOXhmfgj6cHBhabTQH1/Q4KalwOfTpqFy9/TPVFH467H54ZAzPOTlYf2LQcX0oFSNbj7UkBdl74QrqzNaSdaA5GYRYJHKaUk0xjjHTFYDVNoqswPGbuJnYGNA==" target="_blank" rel="external">http://jump.bdimg.com/safecheck/index?url=rN3wPs8te/oSxE9sRI6qqlw7r6N/bqM4WoLU+2qzvfBrxeDgWhD/remxu+pOgEHwO49swBdXbVuYOgpbblsiIBrXrwxllleDmajoIRmGv6PRkcfl3yjls2DiQ1FPTjUg2KzmIKX31KoIQXB3gKTQIS4yX9Tl+BzjQ3xeFfxQrM1rSc2M9M/D7Hk2viJIdEFN0MVrKAVP3EX5aCFV0PsNo8Maouu+CAOXhmfgj6cHBhabTQH1/Q4KalwOfTpqFy9/TPVFH467H54ZAzPOTlYf2LQcX0oFSNbj7UkBdl74QrqzNaSdaA5GYRYJHKaUk0xjjHTFYDVNoqswPGbuJnYGNA==</a><br>重启 Chrome，在百度云界面点击文件会显示这个：</p>
-<p>点击 Api 下载，然后下载即可。<br>速度如下：<br>百度服务器绝对满速</p>
-<p>理论上迅雷也是可以下载的，我使用的下载器可以在这里下载到：<a href="http://www.freedownloadmanager.org/" target="_blank" rel="external">http://www.freedownloadmanager.org/</a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 技术 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 福利 </tag>
-            
-            <tag> 百度云 </tag>
-            
-        </tags>
-        
+      <url>%2F2017%2F02%2F12%2F20170212%2F</url>
+      <content type="text"><![CDATA[原文来自http://blog.ixxin.cn/ 前言 之前分享的方法，大体原理是借助于开发者的服务器，将百度云资源下载到他服务器，然后从他服务器下载，收到各种因素的影响，导致下载速度很慢，还经常断流。下面的方法直接从百度服务器下载，满速下载。 ##步骤 首先去 Chrome 网上应用商店 https://chrome.google.com/webstore?utm_source=chrome-ntp-icon 搜索 Tampermonkey BETA 这款插件安装。使用 Google Chrome 商店的方法：http://blog.ixxin.cn/archives/37/ 再安装这个脚本：http://jump.bdimg.com/safecheck/index?url=rN3wPs8te/oSxE9sRI6qqlw7r6N/bqM4WoLU+2qzvfBrxeDgWhD/remxu+pOgEHwO49swBdXbVuYOgpbblsiIBrXrwxllleDmajoIRmGv6PRkcfl3yjls2DiQ1FPTjUg2KzmIKX31KoIQXB3gKTQIS4yX9Tl+BzjQ3xeFfxQrM1rSc2M9M/D7Hk2viJIdEFN0MVrKAVP3EX5aCFV0PsNo8Maouu+CAOXhmfgj6cHBhabTQH1/Q4KalwOfTpqFy9/TPVFH467H54ZAzPOTlYf2LQcX0oFSNbj7UkBdl74QrqzNaSdaA5GYRYJHKaUk0xjjHTFYDVNoqswPGbuJnYGNA==重启 Chrome，在百度云界面点击文件会显示这个： 点击 Api 下载，然后下载即可。速度如下：百度服务器绝对满速 理论上迅雷也是可以下载的，我使用的下载器可以在这里下载到：http://www.freedownloadmanager.org/]]></content>
     </entry>
+
     
     <entry>
       <title><![CDATA[元宵节]]></title>
-      <url>http://yoursite.com/2017/02/11/20170211/</url>
-      <content type="html"><![CDATA[<pre><code>月映东窗，倏忽元宵，月影阑珊，推杯就茗，沸于莹盏，浮华散尽，细数流年。
-</code></pre><p>　　 观人间烟火，浮华得失。岁深月重，沧桑过往。 禅音清灵，水声远来，清泉流石，月映松林，琴韵悠然，茗香袅袅。云蒸霞蔚间自在，雨露甘霖浅徜徉。叹露浸芳姿，雨润清颜，兀逍遥，览山川。花开花谢，蝶逸翩跹。晴初浅翠，桃妩李萱，柳垂柔婉。空林蓊郁，波光潋滟，云影卓卓。莺啼燕舞，低徊处，惊掠一碧明澜，满眼芳菲，若虚若幻。心深处，喜若晴日绽放情怀。纵人世纷纭，明媚依旧，宛若岁月，醉染朗月，静好如初。心境，饮世味沧凉，却终晴暖；历艰辛，淡若云水，浅笑盈怀。</p>
-<p>　　漫漫尘路，淡然前行。更深露重，低回首，千年渡口。调素琴、阅金经，定格落寞。遥想菡萏绽放处，静谧如诗，如夜色邀影缱绻。柳烟湖畔，水何澹澹，几度明媚染醉？漫舒云笺，墨痕濡新篇。</p>
-<p>　　 栉风沐雨，累积底蕴。云淡风清，握心情撰清浅文字。似水流年，岁月明媚静好。聆曲天籁，任笔锋饰琢水月林泉。繁华之外，谁坐忘幽篁溪涧，娉婷时光驿岸？水湄之间，谁漫抚绝世琴葩，歌飞潇湘云端？时光悄逝，且行且吟，或隽永淡远，待华枝春满，天心月圆，顿悟超然。</p>
-<a id="more"></a>
-<p>　　 微笑向暖，如云闲水柔般爽朗。屋小窗寒，幽兰吐蕊，馨香四溢。懂疏风斜雨温柔，晓弱柳素杏清柔。倚案素手烹茶，终难舍前世涟漪，不想也罢，不想也罢！欲邀月浅酌，看韶华辗转红尘彼岸，瘦影独幽处，蟾辉映无眠。</p>
-<p>　　 夜月温柔细致，权蘸溪云抒怀，共花月低吟。清宁如此时，任窗外桃红柳绿，凭世外烟云如梦，只守纯然至老。依稀三生旧梦，晓镜素影自怜。拈花问菩提，何解红尘缘？如此刻，散落一地词章，无语，难解。</p>
-<p>　　 心携灿漫，收藏岁月芬芳，于光阴缝隙采撷明丽。一月，一茗，一诗，一词，思绪便散淡若水墨丹青般纯澈。无“举杯邀明月，对影成三人”豪迈情怀，惟观树花开，临泓碧水，心境便似春暖花开般晴好。倘细雨纷飞日，还拥听风写雨闲情，辗转人生晴暖，心静若素，恰如此元宵夜月澄澈。</p>
-]]></content>
-      
-        <categories>
-            
-            <category> 生活 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 心得 </tag>
-            
-            <tag> 感悟 </tag>
-            
-        </tags>
-        
+      <url>%2F2017%2F02%2F11%2F20170211%2F</url>
+      <content type="text"><![CDATA[月映东窗，倏忽元宵，月影阑珊，推杯就茗，沸于莹盏，浮华散尽，细数流年。 观人间烟火，浮华得失。岁深月重，沧桑过往。 禅音清灵，水声远来，清泉流石，月映松林，琴韵悠然，茗香袅袅。云蒸霞蔚间自在，雨露甘霖浅徜徉。叹露浸芳姿，雨润清颜，兀逍遥，览山川。花开花谢，蝶逸翩跹。晴初浅翠，桃妩李萱，柳垂柔婉。空林蓊郁，波光潋滟，云影卓卓。莺啼燕舞，低徊处，惊掠一碧明澜，满眼芳菲，若虚若幻。心深处，喜若晴日绽放情怀。纵人世纷纭，明媚依旧，宛若岁月，醉染朗月，静好如初。心境，饮世味沧凉，却终晴暖；历艰辛，淡若云水，浅笑盈怀。 漫漫尘路，淡然前行。更深露重，低回首，千年渡口。调素琴、阅金经，定格落寞。遥想菡萏绽放处，静谧如诗，如夜色邀影缱绻。柳烟湖畔，水何澹澹，几度明媚染醉？漫舒云笺，墨痕濡新篇。 栉风沐雨，累积底蕴。云淡风清，握心情撰清浅文字。似水流年，岁月明媚静好。聆曲天籁，任笔锋饰琢水月林泉。繁华之外，谁坐忘幽篁溪涧，娉婷时光驿岸？水湄之间，谁漫抚绝世琴葩，歌飞潇湘云端？时光悄逝，且行且吟，或隽永淡远，待华枝春满，天心月圆，顿悟超然。 微笑向暖，如云闲水柔般爽朗。屋小窗寒，幽兰吐蕊，馨香四溢。懂疏风斜雨温柔，晓弱柳素杏清柔。倚案素手烹茶，终难舍前世涟漪，不想也罢，不想也罢！欲邀月浅酌，看韶华辗转红尘彼岸，瘦影独幽处，蟾辉映无眠。 夜月温柔细致，权蘸溪云抒怀，共花月低吟。清宁如此时，任窗外桃红柳绿，凭世外烟云如梦，只守纯然至老。依稀三生旧梦，晓镜素影自怜。拈花问菩提，何解红尘缘？如此刻，散落一地词章，无语，难解。 心携灿漫，收藏岁月芬芳，于光阴缝隙采撷明丽。一月，一茗，一诗，一词，思绪便散淡若水墨丹青般纯澈。无“举杯邀明月，对影成三人”豪迈情怀，惟观树花开，临泓碧水，心境便似春暖花开般晴好。倘细雨纷飞日，还拥听风写雨闲情，辗转人生晴暖，心静若素，恰如此元宵夜月澄澈。]]></content>
     </entry>
+
     
     <entry>
       <title><![CDATA[听听那冷雨]]></title>
-      <url>http://yoursite.com/2017/02/10/my-second-blog/</url>
-      <content type="html"><![CDATA[<p>岁月如逝，不经意间又走到了冬季。而冬季在所有的季节里是为我所最不待见的，因为它的阴冷时常让人无法消受，更况且生命早已习惯了秋天的暖阳和惬意。是的，在一年四季里，我最喜欢的季节莫过于秋天，别的不说，单单就看到的绿肥红瘦而言，就足以让思绪飞舞起来。而南方的冬天，既缺少了北方那银装素裹的大气，又少了万里雪飘的粗犷豪迈，所以，面对整个冬季，我的生命诸如众多的昆虫一样，蛰伏在墙的一角或者窗栏底下，听听那天空里时不时飘落的冷雨。</p>
-<p>记得我曾经在一篇文字里说过，我喜欢雨，不管是春天里淅淅沥沥的春雨，还是夏天里突如其来的让人措不及防的阵雨，抑或是如清照笔下的婉约词一样使人不销魂的缠绵秋雨，还是冷若冰霜的冬雨，我都喜欢。因为在我看来，雨，不管它属于什么季节，都是上帝赐予大地的甘霖，枯萎的生命通过它得以鲜活，即所谓的枯木逢春。所以，雨在我心里，就是江河、天使或者是精灵。当然，雨作为季节的精灵，不能用情太过，太过了未免遭人怨、使人烦。所以适可而止，方为喜人。正如人的情感一样，不能到处留情，到处留情，那情就失去了珍贵、失去了原有的价值。</p>
-<p>听听那冷雨，在冬季。由于我生在南方长在南方的原因，故不曾领略北方那漫天飞舞雪花飘的景象，还有什么山舞银蛇、原驰蜡象让人遐思飞扬的意象空间，我所能接触到更多的是冬季里那冷人寒彻肌骨的冬雨。说起这冬雨在南方也可谓是南方的特产，正如北方时不时下起的大雪一样。是的，南方是湿润多雨的季节，就连冬季，那冷雨时不时会从天而降。这样听听那冷雨，自然而然成为南方人过冬的人文景观。</p>
-<p>听听那冷雨，关键在于一个冷字，而冷往往使人理性、空旷、安静。生活中，我特别喜欢安静，而做到安静首要做到一个冷字。因为冷使生命清醒清晰，尤其面对生活、时时事事和浮躁的世界。在这一点上，鲁迅先生是文坛的楷模，更是我个人的偶像。想想先生当年所遇，正是中国最黑暗的岁月，有多少生命在这里滞留，在这里沉浮，唯独先生用冷眼旁观呼唤呐喊，救救孩子，阿Q正传、孔乙己和祥林嫂等文字应运而生，如果没有那冷，是绝对做不到心里那热！所以说，鲁迅先生外在的冷点燃了他内心的热，在这一冷一热之间，我似乎看到了或者触摸到他生命的脉络。先生是绍兴人，而会阴山上多的是冷言冷雨，所以才会人才辈出，所以才会有苦庵斋主人悠闲的乌篷船和野荠菜这样隽永的小品文。</p>
-<a id="more"></a>
-<p>听听那冷雨，是我对冬天唯一可以接受并且可眷恋的理由。即便是再冷风刺骨，再让人缩头缩尾，亦即便是再寒蝉凄切对长亭晚，这也是无奈中选择的选择。是的，我不得不说，生命在很多时候，在生活里看似有诸多的选择，其实现实却总是逼得你没有选择。那是环境和自然所决定的。比如面对时下的冬天和冬天里突如其来的冷雨，只能默默地接受，正如北方的居民一样，面对飘雪生炕取暖一样。当然如果你的生命足够坚强能抵挡彻骨的寒意，自然可以出去赏玩一番雪景下的大千世界。而生在南方的我可惜没有这样的遭遇了，倒是冷风冷雨伴窗扉才是家常便饭。</p>
-<p>或许是习惯的使然，听听那冷雨不觉中早已成为我生命里一道不可多得的风景线。记得去年的晚些时候，刚刚晚饭过后，天空里飘起了冷雨，雨打在窗棂上，发出的清脆声音如李斯特手下的琴音，飞扬而飘逸、灵动而深远。当时我就觉得应该出去走走看看，无论是对岸的田野、还是远处的芦絮或者是伫立在冷雨中的梧桐，抑或是荷塘里的残荷给我带来意想不到的喜悦，可惜除却了荒芜剩下的只是一人的清唱和生命的独舞。冷雨中，我想起了李义山、想起了站在海边观沧海的曹孟德还有夜游赤壁的苏子，他们是不是和我一样对冬天冬雨怀着同样的感受而发出同样的喟叹？遗憾的是我不能超越千年，去揭开我想要的答案！</p>
-<p>听听那冷雨，冷雨让我足不出户，一杯茶、一本书了却几许无奈时光。通常遭遇这样的天气与雨天，我多半会坐在被窝里，或者穿上厚厚的棉衣棉裤坐在窗下，听雨。这雨时而像琵琶一样铿锵有力，时而像风穿过的风铃清脆悦耳。在这样的时空和氛围里，追忆或者思念对生命而言不啻是一种惬意和享受。当然，就生命生活而言，不同的习惯不同的性情自然领略的况味也迥然有异。就拿围炉夜话而言，不同的人生经历自然对它的解读也有千差万别。冷雨里，我读洪应明，感觉心里如星火燎原，一片安暖，满室春气矣！</p>
-<p>听听那冷雨，总让我情不自禁地想到了民国才女张爱玲，她的一生可以说和冷字结伴，如冷雨一般，总给人一种冷语敲小窗的感觉。读张爱玲的文字，更是冷言冷语，给人以一种遗世独立的清新气息。老实说，我喜欢她的冷艳，更喜欢她的冷语。在她的笔底意象里，给人带去的总是离不开苍凉或者凄凉的底蕴。这与她的身世和所处的环境有关，当然也和她的性情和趣味以及价值取向不无关联。冷使她善于独处，如同冷雨一般自顾自怜悯、无拘无束。我时常会想，张爱玲可能也喜欢听听那冷雨吧，否则她骨子里的冷怎么会如此彻底，直到生命岁月的终点！</p>
-<p>听听那冷雨，在拥有一窗橘色的灯光里，窗外一个世界，窗内又是别样风情，一正一负，一冷一热，一样岁月，两种天地。想想，真让人感慨无限。身处这样的境地，无端地托起生命的思考与对往事的追忆。今夜，让生命与冷雨对接，而后追随冷雨的脚步去穿越历史千年，我相信，一定会让今后的生命发出不一样的音节，就像此刻窗外的冷雨，时而飘渺、时而掷地有声！听听那冷雨，感受那冷雨，人静、意静、心更静！</p>
-]]></content>
-      
-        <categories>
-            
-            <category> 生活 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 心得 </tag>
-            
-            <tag> 感悟 </tag>
-            
-        </tags>
-        
+      <url>%2F2017%2F02%2F10%2Fmy-second-blog%2F</url>
+      <content type="text"><![CDATA[岁月如逝，不经意间又走到了冬季。而冬季在所有的季节里是为我所最不待见的，因为它的阴冷时常让人无法消受，更况且生命早已习惯了秋天的暖阳和惬意。是的，在一年四季里，我最喜欢的季节莫过于秋天，别的不说，单单就看到的绿肥红瘦而言，就足以让思绪飞舞起来。而南方的冬天，既缺少了北方那银装素裹的大气，又少了万里雪飘的粗犷豪迈，所以，面对整个冬季，我的生命诸如众多的昆虫一样，蛰伏在墙的一角或者窗栏底下，听听那天空里时不时飘落的冷雨。 记得我曾经在一篇文字里说过，我喜欢雨，不管是春天里淅淅沥沥的春雨，还是夏天里突如其来的让人措不及防的阵雨，抑或是如清照笔下的婉约词一样使人不销魂的缠绵秋雨，还是冷若冰霜的冬雨，我都喜欢。因为在我看来，雨，不管它属于什么季节，都是上帝赐予大地的甘霖，枯萎的生命通过它得以鲜活，即所谓的枯木逢春。所以，雨在我心里，就是江河、天使或者是精灵。当然，雨作为季节的精灵，不能用情太过，太过了未免遭人怨、使人烦。所以适可而止，方为喜人。正如人的情感一样，不能到处留情，到处留情，那情就失去了珍贵、失去了原有的价值。 听听那冷雨，在冬季。由于我生在南方长在南方的原因，故不曾领略北方那漫天飞舞雪花飘的景象，还有什么山舞银蛇、原驰蜡象让人遐思飞扬的意象空间，我所能接触到更多的是冬季里那冷人寒彻肌骨的冬雨。说起这冬雨在南方也可谓是南方的特产，正如北方时不时下起的大雪一样。是的，南方是湿润多雨的季节，就连冬季，那冷雨时不时会从天而降。这样听听那冷雨，自然而然成为南方人过冬的人文景观。 听听那冷雨，关键在于一个冷字，而冷往往使人理性、空旷、安静。生活中，我特别喜欢安静，而做到安静首要做到一个冷字。因为冷使生命清醒清晰，尤其面对生活、时时事事和浮躁的世界。在这一点上，鲁迅先生是文坛的楷模，更是我个人的偶像。想想先生当年所遇，正是中国最黑暗的岁月，有多少生命在这里滞留，在这里沉浮，唯独先生用冷眼旁观呼唤呐喊，救救孩子，阿Q正传、孔乙己和祥林嫂等文字应运而生，如果没有那冷，是绝对做不到心里那热！所以说，鲁迅先生外在的冷点燃了他内心的热，在这一冷一热之间，我似乎看到了或者触摸到他生命的脉络。先生是绍兴人，而会阴山上多的是冷言冷雨，所以才会人才辈出，所以才会有苦庵斋主人悠闲的乌篷船和野荠菜这样隽永的小品文。 听听那冷雨，是我对冬天唯一可以接受并且可眷恋的理由。即便是再冷风刺骨，再让人缩头缩尾，亦即便是再寒蝉凄切对长亭晚，这也是无奈中选择的选择。是的，我不得不说，生命在很多时候，在生活里看似有诸多的选择，其实现实却总是逼得你没有选择。那是环境和自然所决定的。比如面对时下的冬天和冬天里突如其来的冷雨，只能默默地接受，正如北方的居民一样，面对飘雪生炕取暖一样。当然如果你的生命足够坚强能抵挡彻骨的寒意，自然可以出去赏玩一番雪景下的大千世界。而生在南方的我可惜没有这样的遭遇了，倒是冷风冷雨伴窗扉才是家常便饭。 或许是习惯的使然，听听那冷雨不觉中早已成为我生命里一道不可多得的风景线。记得去年的晚些时候，刚刚晚饭过后，天空里飘起了冷雨，雨打在窗棂上，发出的清脆声音如李斯特手下的琴音，飞扬而飘逸、灵动而深远。当时我就觉得应该出去走走看看，无论是对岸的田野、还是远处的芦絮或者是伫立在冷雨中的梧桐，抑或是荷塘里的残荷给我带来意想不到的喜悦，可惜除却了荒芜剩下的只是一人的清唱和生命的独舞。冷雨中，我想起了李义山、想起了站在海边观沧海的曹孟德还有夜游赤壁的苏子，他们是不是和我一样对冬天冬雨怀着同样的感受而发出同样的喟叹？遗憾的是我不能超越千年，去揭开我想要的答案！ 听听那冷雨，冷雨让我足不出户，一杯茶、一本书了却几许无奈时光。通常遭遇这样的天气与雨天，我多半会坐在被窝里，或者穿上厚厚的棉衣棉裤坐在窗下，听雨。这雨时而像琵琶一样铿锵有力，时而像风穿过的风铃清脆悦耳。在这样的时空和氛围里，追忆或者思念对生命而言不啻是一种惬意和享受。当然，就生命生活而言，不同的习惯不同的性情自然领略的况味也迥然有异。就拿围炉夜话而言，不同的人生经历自然对它的解读也有千差万别。冷雨里，我读洪应明，感觉心里如星火燎原，一片安暖，满室春气矣！ 听听那冷雨，总让我情不自禁地想到了民国才女张爱玲，她的一生可以说和冷字结伴，如冷雨一般，总给人一种冷语敲小窗的感觉。读张爱玲的文字，更是冷言冷语，给人以一种遗世独立的清新气息。老实说，我喜欢她的冷艳，更喜欢她的冷语。在她的笔底意象里，给人带去的总是离不开苍凉或者凄凉的底蕴。这与她的身世和所处的环境有关，当然也和她的性情和趣味以及价值取向不无关联。冷使她善于独处，如同冷雨一般自顾自怜悯、无拘无束。我时常会想，张爱玲可能也喜欢听听那冷雨吧，否则她骨子里的冷怎么会如此彻底，直到生命岁月的终点！ 听听那冷雨，在拥有一窗橘色的灯光里，窗外一个世界，窗内又是别样风情，一正一负，一冷一热，一样岁月，两种天地。想想，真让人感慨无限。身处这样的境地，无端地托起生命的思考与对往事的追忆。今夜，让生命与冷雨对接，而后追随冷雨的脚步去穿越历史千年，我相信，一定会让今后的生命发出不一样的音节，就像此刻窗外的冷雨，时而飘渺、时而掷地有声！听听那冷雨，感受那冷雨，人静、意静、心更静！]]></content>
     </entry>
+
     
   
   
