@@ -524,6 +524,15 @@
 <head>
 <meta charset="utf-8">
 <title>CMD 一键获取所有连接过的 wifi 密码</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel="stylesheet" href="/lib/mycss/loadstyle.css" type="text/css">
+        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+        <script>
+       window.onload=function (){
+      $(".loader").hide(1000);
+    }
+  </script>
 <script src="/lib/myjs/clipboard.min.js"></script>
 <!-- <script src="dist/clipboard.min.js"></script> -->
 <style>
@@ -596,6 +605,8 @@ clipboard.on('success', function(e) {
 	</div>
 <img src="http://okowaawz9.bkt.clouddn.com/abcd.png" alt="">
 </div>
+<!-- 添加加载事件 -->
+<div class="loader"></div>
 </body>
 </html>
 <!--  -->
@@ -1854,17 +1865,6 @@ function setClipboardText(event) {
     }
 }
 </script>
-<!-- 添加加载事件 -->
 
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-        <link rel="stylesheet" href="/lib/mycss/loadstyle.css" type="text/css" />
-        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-        <script>
-       window.onload=function (){
-      $(".loader").hide(1000);
-    }
-  </script>
-<div class="loader"></div>
 </body>
 </html>
