@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA['20170306']]></title>
+      <url>%2F2017%2F03%2F06%2F20170306%2F</url>
+      <content type="text"><![CDATA[hexo搭建博客过程中出现的问题，4000端口被占用错误如下： 解决方法：可在站点主题_config.yml内加上如下代码更改hexo-server运行时的端口号： ##改变端口： server: ​ port: 4099 ​ compress: true ​ header: true 其中4099可以换成想要运行的端口号。]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[解决ssh connect to host github.com port 22 connection timed out]]></title>
       <url>%2F2017%2F02%2F23%2F20170223%2F</url>
       <content type="text"><![CDATA[当出现上述这个问题时，即connect to host github.com port 22: Connection timed out。 解决方法：在.ssh目录下创建一个config文件，输入如下内容： Host github.comUser xxx@qq.com （你注册github时的邮箱，这里使用注册的用户名也行）Hostname ssh.github.comPreferredAuthentications publickeyIdentityFile ~/.ssh/id_rsaPort 443 值得注意是文件名为config，没有后缀名。 然后测试是否连得上 : 即：ssh -T git@github.com 会出现以下情况： 出现Hi xxx!……表示连接成功。]]></content>
