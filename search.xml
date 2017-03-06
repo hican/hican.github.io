@@ -3,9 +3,9 @@
   
     
     <entry>
-      <title><![CDATA['20170306']]></title>
+      <title><![CDATA[hexo搭建博客过程中出现的问题，4000端口被占用]]></title>
       <url>%2F2017%2F03%2F06%2F20170306%2F</url>
-      <content type="text"><![CDATA[hexo搭建博客过程中出现的问题，4000端口被占用错误如下： 解决方法：可在站点主题_config.yml内加上如下代码更改hexo-server运行时的端口号： ##改变端口： server: ​ port: 4099 ​ compress: true ​ header: true 其中4099可以换成想要运行的端口号。]]></content>
+      <content type="text"><![CDATA[错误如下： 解决方法：可在站点主题_config.yml内加上如下代码更改hexo-server运行时的端口号： ##改变端口： server: ​ port: 4099 ​ compress: true ​ header: true 其中4099可以换成想要运行的端口号。(以上格式不对，复制粘贴是小心一点。)]]></content>
     </entry>
 
     
