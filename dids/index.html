@@ -707,6 +707,17 @@ function setClipboardText(event) {
     }
 }
 </script>
+<!-- 添加加载事件 -->
 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel="stylesheet" href="mycss/loadstyle.css" type="text/css" />
+        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+        <script>
+       window.onload=function (){
+      $(".loader").hide(1000);
+    }
+  </script>
+<div class="loader"></div>
 </body>
 </html>
