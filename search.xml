@@ -10,13 +10,6 @@
 
     
     <entry>
-      <title><![CDATA[使用SQLite过程中问题与解决方法]]></title>
-      <url>%2F2017%2F03%2F16%2F20170316%2F</url>
-      <content type="text"><![CDATA[一时兴起，研究起了数据库，就喵准了SQLite。我成功这次用的是vs2010，采用的mvc三层架构。之前用的是vs2012，现在细想，我是真笨，因为那或许根本与版本没有关系。System.Data.SQLite.dll一直时SQLite与c#的永恒问题，我在这过程中也不例外，我碰到了，我也把ANY CUP改成x86的了，重新生成解决方案时，真好，果然没那个警告了。当我尝试下一步是，又出现问题了，这次是调用System.Data.SQLite引发FileNotFoundExcepiton，我也很绝望，因为网上仅有的一些资料几乎都是跟改x86有关的。但我还是 找到一些蛛丝马迹,原来在C:\Windows\Microsoft.NET\assembly\GAC_32\目录下添加 System.Data.SQLite\v4.0_1.0.77.0db937bc2d44ff139\System.Data.SQLite.dll 目录和文件就可以了，这样Dll程序集调用sqlite的方法时就能找到System.Data.SQLite.dll了。v4.0_1.0.77.0db937bc2d44ff139 目录是怎么来的呢？看下图我以为这样就完事了，结果又是一个异常出现，什么初始值引发的异常。我心累得想就此点一下右上角的那个角落，从此老死不相往来。但我还是忍住了，我再一遍点开那个异常，漫不经心的看了看，原来是权限不够，我立马关掉vs2010，然后以管理员身份运行。再编译运行，结果，嘻嘻，成功了。(系统名忽略……)]]></content>
-    </entry>
-
-    
-    <entry>
       <title><![CDATA[hexo搭建博客过程中出现的问题，4000端口被占用]]></title>
       <url>%2F2017%2F03%2F06%2F20170306%2F</url>
       <content type="text"><![CDATA[错误如下： 解决方法：可在站点主题_config.yml内加上如下代码更改hexo-server运行时的端口号： ##改变端口： server: ​ port: 4099 ​ compress: true ​ header: true 其中4099可以换成想要运行的端口号。(以上格式不对，复制粘贴是小心一点。)]]></content>
