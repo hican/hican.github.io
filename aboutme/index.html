@@ -358,8 +358,10 @@
                 url: "http://cache1.arcgisonline.cn/arcgis/rest/services/ChinaOnlineCommunity/MapServer"
             }).addTo(map);
             var homeMarker = L.AwesomeMarkers.icon({
-                icon: 'coffee',
-                markerColor: 'blue'
+                prefix: 'fa',
+                icon: 'home',
+                markerColor: 'blue',
+                iconColor: 'white'
             });
             L.marker([26.211934100791698, 116.29251065746944], {
                 icon: homeMarker
